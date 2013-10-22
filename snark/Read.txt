@@ -1,0 +1,34 @@
+PeerCoordinator.getDownloaded()
+PeerCoordinator.getUploaded()
+可得到上传大小，下传大小 再除以采样周期便得到上传带宽下载带宽
+
+PeerState下的 pieceMessage用来记录下载piece大小
+PeerConnectionIn下调用pieceMessage(req);其中每个piece到来时，程序只是调用PeerState::getOutstandingRequest来检查piece编号是否是我们要的， begin && length是否符合要求
+
+
+PeerAcceptor 负责调用addPeer 来连接对方一个peer peer地址由PeerAcceptor::connection中socket参数确定
+
+ConnectionAcceptor::run 调用peeracceptor, 每收到一个对等方连接请求，创建新的连接
+PeerCoordinator::addPeer中
+Peer::runConnection(PeerListener listener, BitField bitfield) 会上传bitfield到对方
+PeerCoordinator 调用runConnection, 并通过Storage::getBitField()来生成上传文件
+
+
+PeerState 中有  PARTSIZE = 32 K. addRequest();
+
+Peer::runConnection 调用PeerConnectionIn::start来下载数据
+
+PeerState::requestMessage 负责将对方需要的piece发送出去
+
+PeerConnectionIn::run 负责判断接收到的信息是request information还是piece data还是其他的并且做出响应
+
+创建了新peer后要调用PeerCoordinator::connected注册
+
+PeerCoordinator::connected会将没有加进peers的peer加进去
+
+
+
+改进：
+	1： 在peerstate中增加currency，当currency为零，便停止传送，只有对等发送才能确保currency不为零，没接收到对方一次数据，currency加1
+	2：判断带宽利用率
+	3： 每一次PeerCheckTask，找出下载速度最大的对等方，创造更多的peer连接这个对等方

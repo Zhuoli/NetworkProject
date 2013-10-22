@@ -1,0 +1,59 @@
+Developed by Zhuoli Liang
+==========================
+
+Makefile Commands:
+0: make: build project
+1: make build: build project
+2: make new : new project, create src, bin, res dirs
+3: make clean: clear classes generated
+4: make rebuild: rebuild project
+5: make jar: package your project into a executable jar
+
+Directories Description:
+bin/ : *.class files
+src/ : *.java files
+res/ : resources files such as cookiesession
+
+Flow Chart:
+./webcrawler  ---|
+                 |  login the fakebook
+                / \
+               /   \  succeed?
+              /     \_ NO ------- quit
+              \     /
+               \   /
+                \ / 
+                 |   
+                 | Yes
+                 |
+           --------------
+           |            | parse Http response and get csrftoken and sessionid
+           -------------  store the first location url
+                  |
+    |------------ |
+    |            / \
+    |           /   \ new url to be search? 
+    |          /     \_ No ----- quit
+    |          \     /
+    |           \   /
+    |            \ /
+    |             | 
+    |             | Yes
+    |       --------------
+    |       |            | creat new thread to search each page
+    |       -------------- if find flag, record it 
+    |             |         
+    |             |
+    |            / \
+    |           /   \ find all five secret flags?
+    |          /     \_ Yes ---- quit
+    |          \     /
+    |           \   /
+    |            \ /
+    |    Yes      |
+     ------------- 
+
+Challenges I faced:
+1: It's my first time to use java write Multi-Threads. Through this project, 
+   I find it's a good idea to use thread pool
+2: Since I need to store and look for the urls which have been searched, considerint there would be thousands of urls stored, using hash map would be efficient

@@ -1,0 +1,10 @@
+#! /bin/sh
+if [ $# = 1 ] || [ $# = 0 ]
+then 
+  echo "Please input arguments: ./webcrawler [username] [password]\n"
+elif [ $# = 2 ]
+then
+  java -ea -cp bin project2.WebCrawler $1 $2
+else
+  echo "Please input arguments: ./webcrawler [username] [password]\n"
+fi

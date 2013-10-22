@@ -1,0 +1,6 @@
+#!/bin/sh
+javac -d bin Parse.java
+javac -d bin ListThroughput.java
+#javac -d bin ListDropRate.java
+javac -d bin ListLatency.java
+

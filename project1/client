@@ -1,0 +1,17 @@
+#!/bin/sh
+ 
+if [ $# = 1 ] || [ $# = 0 ]
+then
+  echo "Please in put arguments: ./client [hostname] <-p port> <-s> [NEU ID]\n"  
+elif [ $# = 2 ]
+then 
+  java -ea -cp bin pack.Project1 $1 $2
+elif [ $# = 3 ]
+then 
+  java -ea -cp bin pack.Project1 $1 $2 $3
+elif [ $# = 4 ]
+then
+  java -ea -cp bin pack.Project1 $1 $2 $3 $4
+else [ $# = 5 ]
+  java -ea -cp bin pack.Project1 $1 $2 $3 $4 $5
+fi

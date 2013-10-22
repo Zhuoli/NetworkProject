@@ -1,0 +1,14 @@
+#!/bin/sh
+rm data/*
+rm out.tr
+for i in $(seq 10); do
+	/course/cs4700f12/ns-allinone-2.35/bin/ns tcp.tcl $i"Mb";
+	java -cp bin  Parse "TCPatCBRrate"$i"Mb.tr"
+done;
+java -cp bin ListThroughput
+java -cp bin ListDropRate
+java -cp bin ListLatency
+gnuplot plotThrouRate.gnu
+gnuplot plotDropRate.gnu
+gnuplot plotLatency.gnu
+

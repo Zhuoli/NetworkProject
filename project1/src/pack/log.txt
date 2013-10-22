@@ -1,0 +1,18 @@
+
+
+
+1:2013/1/18: 只能连接一次，第二次读取返回错误如下：
+main, handling exception: java.net.SocketException: Software caused connection abort: recv failed
+%% Invalidated:  [Session-1, TLS_RSA_WITH_AES_128_CBC_SHA]
+main, SEND TLSv1 ALERT:  fatal, description = unexpected_message
+main, WRITE: TLSv1 Alert, length = 32
+main, Exception sending alert: java.net.SocketException: Software caused connection abort: socket write error
+main, called closeSocket()
+Software caused connection abort: recv failed
+
+通过服务器模拟还原错误，找到原因： 服务器关闭端口 
+为什么关闭端口，在windows下关闭端口  在ccs服务器上运行正常
+
+2: Makefile 可以帮助我们在linux下协同编译多文件
+
+3: client 脚本没那么难写，只是把命令上的命令写进去就行了

@@ -1,0 +1,35 @@
+Developed by Zhuoli Liang
+============================
+
+Makefile Command:
+0: make: build project
+1: make build : build project
+2: make new : new project, create src, bin, res dirs
+3: make clean: clear classes generated
+4: make rebuild" rebuild project
+5: make jar: package your project into a executable jar
+
+Directories Description:
+bin/ : *.class files
+src/ : *.java files
+res/ : resource files such as KeyStore
+
+Flow Chart:
+./client  --|
+            |
+           / \ with SSL? 
+          /   \_ Yes ___ ClientWithSSL.java
+          \   /
+           \ /
+            | NO
+         --------
+        |        | _ ClientWithoutSSL.java
+         --------
+            |
+         
+Challenges I faced:
+ 1: since the SSL server is not certified, it takes me a long time to get server's certificate and put it in to my local trusted keystore
+ 2: Handle the incorrect string received from client user and server
+ 3: It's my first time to write Makefile, so I spend several days to learn the grmmar
+Test my code:
+ Just run client with different arguments of which there could be some argumets incorrec and test if the client could handle these Exceptions correctly.

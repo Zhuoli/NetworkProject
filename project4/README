@@ -1,0 +1,18 @@
+
+DO NOT DELETE rawhttpget! 
+
+rawhttpget is just a script which
+ 1: first generate file called localIP.dat containing local ip address 
+ 2: run main function
+
+"make clean" to remove *.o
+
+
+In tcp layer, this program implements three hand shake, tear down, duplicate packet retransmit;
+In http layer, this program can check http head to see if it contains " 200 OK" and got content-length from http header.
+               to control server's sending rate, this program set ad_window to 1024 thus server will wait after sending two packets.
+Program will tear down TCP connection one one of the following condiction occur:
+  1: packet contain "syn" "rst"
+  2: data length reachs content-length
+
+          

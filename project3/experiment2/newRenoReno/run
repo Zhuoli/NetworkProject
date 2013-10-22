@@ -1,0 +1,12 @@
+#!/bin/sh
+rm data/*
+rate=8
+ns tcp.tcl $rate"Mb";
+java -cp bin  Parse "TCPatCBRrate"$rate"Mb.tr"
+java -cp bin ListThroughput $rate
+java -cp bin ListDropRate $rate
+java -cp bin ListLatency $rate
+gnuplot plotThrouRate.gnu
+gnuplot plotDropRate.gnu
+gnuplot plotLatency.gnu
+

@@ -1,0 +1,10 @@
+TCPatCBRrate1Mb.tr lastSeqNum: 18747 TCP_throughput: 7.437469482421875
+TCPatCBRrate2Mb.tr lastSeqNum: 15099 TCP_throughput: 5.990203857421875
+TCPatCBRrate3Mb.tr lastSeqNum: 14556 TCP_throughput: 5.7747802734375
+TCPatCBRrate4Mb.tr lastSeqNum: 12362 TCP_throughput: 4.90435791015625
+TCPatCBRrate5Mb.tr lastSeqNum: 9981 TCP_throughput: 3.959747314453125
+TCPatCBRrate6Mb.tr lastSeqNum: 8169 TCP_throughput: 3.240875244140625
+TCPatCBRrate7Mb.tr lastSeqNum: 6427 TCP_throughput: 2.549774169921875
+TCPatCBRrate8Mb.tr lastSeqNum: 4576 TCP_throughput: 1.8154296875
+TCPatCBRrate9Mb.tr lastSeqNum: 2344 TCP_throughput: 0.929931640625
+TCPatCBRrate10Mb.tr lastSeqNum: 64 TCP_throughput: 0.025390625

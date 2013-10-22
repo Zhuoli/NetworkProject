@@ -1,0 +1,15 @@
+Modification:
+
+1.  FileName: PeerCoordinator.java
+	Info: Exit as soon as the download is complete.
+
+2.	FileName: TrackerClient.java
+	Info: Add timer to get the downloading total time.
+
+3.	FileName: PeerCheckerTask.java
+	Info: Choke the peers in other way.
+
+4.	FileName: PeerState.java
+	Info: Increase the PARTSIZE to twice.
+
+

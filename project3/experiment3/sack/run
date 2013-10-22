@@ -1,0 +1,16 @@
+#!/bin/sh
+rm data/*
+rm out.tr
+ns tcp.tcl "3Mb" "DropTail"
+java -cp bin  Parse "TCPatDropTail.tr"
+
+ns tcp.tcl "3Mb" "RED"
+java -cp bin Parse "TCPatRED.tr"
+
+#java -cp bin ListThroughput
+#java -cp bin ListDropRate
+#java -cp bin ListLatency
+#gnuplot plotThrouRate.gnu
+#gnuplot plotDropRate.gnu
+#gnuplot plotLatency.gnu
+

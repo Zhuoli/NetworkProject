@@ -1,0 +1,11 @@
+POST /accounts/login/ HTTP/1.1
+Accept: text/html, application/xhtml+xml, */*
+Referer: http://cs5700f12.ccs.neu.edu/accounts/login/?next=/fakebook/
+Accept-Language: zh-CN
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding:
+Host: cs5700f12.ccs.neu.edu
+Content-Length: 109
+Connection: close
+Cache-Control: no-cache
